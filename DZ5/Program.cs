@@ -78,7 +78,7 @@ WriteArray(myArray);
 Console.WriteLine(oddEl(myArray));
 */
 
-/* task 38: Задайте массив вещественных чисел. Найдите разницу между максимальным и минимальным элементов массива.
+// task 38: Задайте массив вещественных чисел. Найдите разницу между максимальным и минимальным элементов массива.
 
 double[] CreateRandomArray(int size )
 {
@@ -122,6 +122,6 @@ WriteArray(myArray);
 
 
 Console.WriteLine(minMax(myArray));
-*/
+
 
 

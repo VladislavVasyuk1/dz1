@@ -82,7 +82,7 @@ Console.WriteLine(oddEl(myArray));
 
 double[] CreateRandomArray(int size )
 {
-    double[] array = new int[size];  //величина и инициализация массива
+    double[] array = new double[size];  //величина и инициализация массива
 
     for(int i = 0; i < size; i++)
         {
@@ -92,7 +92,7 @@ double[] CreateRandomArray(int size )
     return array;
 }
 
-void WriteArray(int[] array)  // вывод массива
+void WriteArray(double[] array)  // вывод массива
 {
     for(int i = 0; i < array.Length; i++)
         Console.Write(array[i] + " ");
@@ -105,7 +105,7 @@ double minMax(double[] array)
     double res = 0;
     double max = array[0];
     double min = array[0];
-    for(int i = 1; i < size; i++)
+    for(int i = 1; i < array.Length; i++)
     {
         if(max < array[i]) max = array[i];
         else if(min > array[i]) min = array[i];

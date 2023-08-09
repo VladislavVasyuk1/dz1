@@ -100,7 +100,7 @@ void WriteArray(int[] array)  // вывод массива
     Console.WriteLine();
 }
 
-int minMax(double[] array)
+double minMax(double[] array)
 {
     double res = 0;
     double max = array[0];
@@ -120,3 +120,5 @@ int length = Convert.ToInt32(Console.ReadLine());
 double[] myArray = CreateRandomArray(length);
 WriteArray(myArray);
 
+
+Console.WriteLine(minMax(myArray));

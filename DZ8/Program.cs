@@ -200,10 +200,10 @@ Console.WriteLine();
 Show2dArray(secondArray);
 Console.WriteLine();
 int[,] res = ymn(ferstArray, secondArray);
-Show2dArray(ferstArray);
+Show2dArray(res);
 */
 
-/*Задача 60..Сформируйте трёхмерный массив из неповторяющихся двузначных чисел. Напишите программу, которая будет построчно выводить массив, добавляя индексы каждого элемента.
+//Задача 60..Сформируйте трёхмерный массив из неповторяющихся двузначных чисел. Напишите программу, которая будет построчно выводить массив, добавляя индексы каждого элемента.
 
 int[,,] CreateRanddom()
 {
@@ -217,17 +217,26 @@ int[,,] CreateRanddom()
 
     int[,,] array = new int[m,n,k];
 
-    for(int x = 0; x < k; x++)
-    {
-        for(int i = 0; i < m; i++)
+    
+        int temp = 0;;
+        for(int x = 0; x < k; x++)
         {
-            for(int j = 0; j < n; j++)
+            for(int i = 0; i < m; i++)
+            {
+                for(int j = 0; j < n; j++)
                 {
-                    array[i, j, x] = new Random().Next(10, 100);
+                    temp = new Random().Next(10, 100);
+                    while (proverka(array, temp) == true)
+                    {
+                        temp = new Random().Next(10, 100);   
+                    }
+                    array[x, i, j] = temp;
                 }
+            }   
         }
-    }
-    return array; 
+        return array; 
+    
+
 }
 
 void Show2dArray(int[,,] array)
@@ -237,20 +246,35 @@ void Show2dArray(int[,,] array)
         for(int i = 0; i < array.GetLength(0); i++)
         {   
             for(int j = 0; j < array.GetLength(1); j++)
-                Console.Write($"{array[i, j, x]} ({i},{j},{x})\t ");
+                {Console.Write($"{array[i, j, x]}({x},{i},{j}) ");}
             
-            Console.WriteLine();
+            Console.WriteLine();  
         }
+      Console.WriteLine();  
     }
 }
 
+bool proverka(int[,,] array, int temp)
+{
+    for(int i = 0; i < array.GetLength(0); i++)
+    {
+        for(int j = 0; j < array.GetLength(1); j++)
+        {
+            for(int k = 0; k < array.GetLength(2); k++)
+            {
+                if (temp == array[i, j, k]) return true;
+            }
+        }
+    }
+return false;
+}
 
 
 
 int[,,] ferstArray = CreateRanddom();
 Show2dArray(ferstArray);
 
-*/
+
 
 /*Напишите программу, которая заполнит спирально массив 4 на 4.
 

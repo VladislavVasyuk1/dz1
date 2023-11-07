@@ -22,6 +22,8 @@ void WriteArray(string[] array)  // вывод массива
     Console.WriteLine();
 }
 
+sorted(array1, array2);
+WriteArray(array2);
 
 
 
